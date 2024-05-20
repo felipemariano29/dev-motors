@@ -1,0 +1,136 @@
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 34px 0;
+  padding-top: 74px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+
+    .title {
+      font-size: 34px;
+      color: #121212;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  }
+
+  .banner {
+    position: relative;
+    width: 300px;
+    height: 350px;
+
+    .image {
+      object-fit: cover;
+      width: 300px;
+      height: 350px;
+      border-radius: 8px;
+    }
+  }
+}
+
+.servicesTitle {
+  color: #121212;
+  margin: 40px 0 24px 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .service {
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 8px;
+
+      .image {
+        object-fit: cover;
+        border-radius: 8px;
+        width: 280px;
+        height: 350px;
+        transition: all 0.4s;
+      }
+
+      &:hover {
+        .image {
+          transform: scale(1.1);
+        }
+
+        & + p {
+          font-weight: bold;
+          font-size: 22px;
+        }
+      }
+    }
+
+    p {
+      text-align: center;
+      margin: 8px 0;
+      font-size: 18px;
+      transition: all 0.4s;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .about {
+    flex-direction: row;
+    .content {
+      .title {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  .servicesTitle {
+    margin-top: 24px;
+    font-size: 30px;
+  }
+
+  .services {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .service {
+      .banner {
+        width: 280px;
+        height: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .about {
+    .content {
+      p {
+        align-self: flex-start;
+        max-width: 80%;
+      }
+    }
+
+    .banner {
+      width: 600px;
+      height: 450px;
+    }
+  }
+}

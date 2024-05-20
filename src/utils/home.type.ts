@@ -28,7 +28,7 @@ export interface HomeProps {
   };
 }
 
-interface ServiceProps {
+export interface ServiceProps {
   description: string;
   image: {
     url: string;

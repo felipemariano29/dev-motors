@@ -3,11 +3,11 @@ import { Submenu } from "../components/home/submenu";
 import { HomeProps } from "@/utils/home.type";
 import { Hero } from "@/components/hero";
 import { Phone } from "lucide-react";
+import { About } from "@/components/home/about";
+import { Container } from "@/components/container";
 
 export default async function Home() {
   const { object: home }: HomeProps = await getHomeData();
-
-  console.log(home);
 
   return (
     <main>
@@ -20,6 +20,10 @@ export default async function Home() {
         bannerUrl={home.metadata.banner.url}
         icon={<Phone size={24} color={"#fff"} />}
       />
+
+      <Container>
+        <About about={home.metadata.about} services={home.metadata.services} />
+      </Container>
     </main>
   );
 }
