@@ -1,0 +1,59 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  margin: 44px 14px;
+
+  .article {
+    flex: 1;
+
+    p {
+      margin-bottom: 24px;
+    }
+
+    .link {
+      background-color: #121212;
+      color: #fff;
+      border-radius: 4px;
+      padding: 8px 34px;
+    }
+
+    .title {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+  }
+
+  .banner {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    max-width: 400px;
+
+    .image {
+      object-fit: cover;
+      border-radius: 8px;
+      width: 300px;
+      height: 350px;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .section {
+    flex-direction: row;
+    gap: 54px;
+
+    .article {
+      .title {
+        font-size: 32px;
+      }
+    }
+
+    .banner {
+      flex: 1;
+    }
+  }
+}
