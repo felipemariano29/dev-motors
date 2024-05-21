@@ -5,6 +5,27 @@ import { Phone } from "lucide-react";
 import { Hero } from "@/components/hero";
 import { Container } from "@/components/container";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
+  try {
+    const { objects: post }: PostProps = await getPageDataBySlug(slug);
+
+    return {
+      title: `DevMotors - ${post[0].title}`,
+      description: post[0].metadata.description.text,
+    };
+  } catch (error) {
+    return {
+      title: "DevMotors - Sua oficina especializada",
+      description: "Oficina de carros em São Paulo, SP",
+    };
+  }
+}
 
 export default async function Page({
   params: { slug },
