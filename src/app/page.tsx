@@ -11,6 +11,7 @@ import { SubmenuProps } from "@/utils/submenu.type";
 export default async function Home() {
   const { object: home }: HomeProps = await getHomeData();
   const submenu: SubmenuProps = await getSubmenuData();
+  const test = await getSubmenuData();
 
   return (
     <main>
